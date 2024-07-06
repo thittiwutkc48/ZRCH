@@ -37,45 +37,6 @@ This command check user it create admin :
 SELECT rolname FROM pg_roles;
 
 
-create table  suppliershipduration,customer,supplier sql in init.sql:
--- CREATE TABLE IF NOT EXISTS suppliershipduration (
---     supplierid INT,
---     shipcountry VARCHAR(100),
---     durationday INT,
---     was_calculated_to TIMESTAMP,
---     last_updated_at TIMESTAMP
--- );
-
--- CREATE TABLE IF NOT EXISTS  customer (
---     customerid VARCHAR(10) PRIMARY KEY,
---     companyname VARCHAR(100),
---     contactname VARCHAR(100),
---     contacttitle VARCHAR(100),
---     address VARCHAR(255),
---     city VARCHAR(100),
---     region VARCHAR(100),
---     postalcode VARCHAR(20),
---     country VARCHAR(100),
---     phone VARCHAR(64), 
---     fax VARCHAR(64)    
--- );
-
--- CREATE TABLE IF NOT EXISTS supplier (
---     supplierid integer PRIMARY KEY,
---     companyname varchar(255),
---     contactname varchar(255),
---     contacttitle varchar(255),
---     address varchar(255),
---     city varchar(255),
---     region varchar(255),
---     postalcode varchar(10),
---     country varchar(255),
---     phone varchar(64),  
---     fax varchar(64),    
---     homepage varchar(255)
--- );
-
--- GRANT INSERT, SELECT, UPDATE, DELETE, TRUNCATE, TRIGGER, REFERENCES ON TABLE public.customer TO "admin";
 
 airflow:
 Web UI AIRFLOW : http://localhost:8080/
