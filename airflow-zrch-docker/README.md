@@ -1,10 +1,10 @@
-/airflow-prinh-docker
-dags
-└── dag_export
-└── dag_ingest
-└── dag_insert
-key
-└── .json
+airflow-prinh-docker
+dags :
+dag_export
+dag_ingest
+dag_insert
+key :
+.json
 logs
 pg-intit-scripts
 plugins
