@@ -1,23 +1,23 @@
 /airflow-prinh-docker
-├── dags
-│    └── dag_export
-|    └── dag_ingest
-|    └── dag_insert
-├── key
-|    └── .json
-├── logs
-├── pg-intit-scripts
-├── plugins
-├── scripts
-├── shared
-├── sql
-├── test
-├── .gitignore
-├── airflow.cfg
-├── docker-compose.yml
-├── Dockerfile
-├── requirements.txt
-└── README.md
+dags
+└── dag_export
+└── dag_ingest
+└── dag_insert
+key
+└── .json
+logs
+pg-intit-scripts
+plugins
+scripts
+shared
+sql
+test
+.gitignore
+airflow.cfg
+docker-compose.yml
+Dockerfile
+requirements.txt
+README.md
 
 HOW TO RUN APP STEP BY STEP 
 RUN docker-compose up      
