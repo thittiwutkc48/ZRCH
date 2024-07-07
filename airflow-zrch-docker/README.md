@@ -4,6 +4,8 @@ Step-by-Step Deployment
 First, clone the repository to your local machine:
 git clone https://github.com/thittiwutkc48/ZRCH.git
 cd airflow-zrch-docker
+or
+Open VS code go to Source Control clik clone repository and paste https://github.com/thittiwutkc48/ZRCH.git
 
 2. Start Docker Containers
 Run the following command to start the Docker containers:
