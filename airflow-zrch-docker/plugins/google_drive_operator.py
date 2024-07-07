@@ -2,12 +2,23 @@ import os
 from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 import io
 
-def upload_file(drive_service,file_path, folder_id=None):
-    """Upload a file to Google Drive."""
+def upload_to_drive(drive_service,file_path, folder_id):
     file_name = os.path.basename(file_path)
+    query = f"name='{file_name}' and '{folder_id}' in parents and trashed=false"
+    existing_files = drive_service.files().list(q=query, fields="files(id)").execute()
+    files = existing_files.get('files', [])
+
+    if files:
+        for file in files:
+            try:
+                drive_service.files().delete(fileId=file['id']).execute()
+                print(f"Deleted existing file '{file_name}' with ID: {file['id']}")
+            except Exception as e:
+                print(f"Failed to delete existing file '{file_name}': {str(e)}")
+
     file_metadata = {
         'name': file_name,
-        'parents': [folder_id] if folder_id else []
+        'parents': [folder_id]
     }
     media = MediaFileUpload(file_path, resumable=True)
     file = drive_service.files().create(
@@ -16,7 +27,6 @@ def upload_file(drive_service,file_path, folder_id=None):
         fields='id'
     ).execute()
     print(f"File '{file_name}' uploaded successfully with ID: {file.get('id')}")
-    return file.get('id')
 
 def list_folder(drive_service,parent_folder_id=None):
     """List folders and files in Google Drive."""

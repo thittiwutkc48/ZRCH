@@ -3,5 +3,3 @@ CREATE DATABASE zrch_db;
 CREATE USER admin WITH PASSWORD 'admin_password';
 
 GRANT ALL PRIVILEGES ON DATABASE zrch_db TO admin;
-
-GRANT ALL ON SCHEMA public TO admin;

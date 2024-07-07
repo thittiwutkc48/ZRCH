@@ -4,9 +4,7 @@ RUN python -m ensurepip --upgrade
 RUN python -m venv /opt/airflow/venv
 RUN /bin/bash -c "source /opt/airflow/venv/bin/activate \
     && pip install --upgrade pip \
-    && pip install psycopg2-binary \
-    && pip install -r /requirements.txt \
-    && pip install openpyxl"
+    && pip install -r /requirements.txt"
 
 COPY requirements.txt /requirements.txt
 
